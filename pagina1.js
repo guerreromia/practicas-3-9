@@ -13,10 +13,6 @@ class Tarjeta {
         this.descripcion = descripcion;
         this.precio = precio;
     }
-    agregarAlbum(album) {
-
-    }
-
 }
 let contenedor = document.getElementById("contenedor")
 contenedor.classList.add("conteiner")
@@ -27,7 +23,7 @@ let row = document.createElement("div")
 row.classList.add("row")
 let albums = [
     new Tarjeta("El Disco De Tu Corazón", "https://i.scdn.co/image/ab67616d0000b2735195219d777c551f280d95d5", "Miranda!\nFormato: CD MUSICAL", 25000),
-    new Tarjeta("Don't Tap the Glass", "https://upload.wikimedia.org/wikipedia/en/b/bb/Tyler%2C_the_Creator_-_Don%27t_Tap_the_Glass.png", "Tyler The Creator \nFormato: CD MUSICAL", 35000),
+    new Tarjeta("Flower Boy", "https://indiehoy.com/wp-content/uploads/2017/07/Tyler-the-Creator-Flower-Boy-994x1000.jpg", "Tyler The Creator \nFormato: CD MUSICAL", 35000),
     new Tarjeta("Por Cesárea", "https://images.genius.com/5bdb578d1dad91f670071fa9c30603ed.1000x1000x1.png", "Dillom \nFormato: Vinilo", 40000),
     new Tarjeta("DAMN.", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb5WDlRTHe1EdYmifyyyTqTmMaSsVdd9EVvQ&s", "Kendrick Lamar \nFormato: CD MUSICAL", 20000),
     new Tarjeta("The Dark Side of the Moon", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKqByhEFZaHf3OoW7oYwdsUQxjSbxn6SOquQ&s", " Pink Floyd \nFormato: Vinilo", 100000),
