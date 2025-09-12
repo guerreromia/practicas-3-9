@@ -31,9 +31,27 @@ let albums = [
     new Tarjeta("Karma", "https://akamai.sscdn.co/letras/360x360/albuns/3/6/8/0/3792071755868469.jpg", "Stray Kids\n Formato: ALBUM", 60000),
     new Tarjeta("The Tortured Poets Department", "https://upload.wikimedia.org/wikipedia/en/6/6e/Taylor_Swift_%E2%80%93_The_Tortured_Poets_Department_%28album_cover%29.png", "Taylor Swift \nFormato:Vinilo", 40000),
     new Tarjeta("NO VAYAS A ATENDER CUANDO EL DEMONIO LLAMA", "https://i.scdn.co/image/ab67616d0000b27306ad26d22030b8c988a10f20", "LALI \nFormato: CD MUSICAL", 25000),
-    new Tarjeta("Scarlet", "https://upload.wikimedia.org/wikipedia/en/0/0b/Doja_Cat_-_Scarlet.png", "Doja Cat \nFormato: CD MUSICAL", 25000),
+    new Tarjeta("Scarlet", "https://upload.wikimedia.org/wikipedia/en/0/0b/Doja_Cat_-_Scarlet.png", "Doja Cat\n \nFormato: CD MUSICAL", 25000),
     new Tarjeta("Oktubre", "https://akamai.sscdn.co/uploadfile/letras/albuns/6/3/e/4/2183691712605514.jpg", " Patricio Rey y sus Redonditos de Ricota \nFormato:CD MUSICAL", 30000),
-    new Tarjeta("Baño María", "https://i.scdn.co/image/ab67616d0000b27340349e09eb8cc8cac72f7959", " CA7RIEL & Paco Amoroso \nFormato: CD MUSICAL", 30000)
+    new Tarjeta("Baño María", "https://i.scdn.co/image/ab67616d0000b27340349e09eb8cc8cac72f7959", " CA7RIEL & Paco Amoroso \nFormato: CD MUSICAL", 30000),
+    new Tarjeta("Cabildo y Juramento","https://www.cmtv.com.ar/tapas-cd/0985337001602096602.webp","Conociendo Rusia \nFormato: Vinilo",35000),
+    new Tarjeta("Infame","https://i.scdn.co/image/ab67616d0000b273d4fa1c14516db6f30007a663","Babasónicos \nFormato: CD MUSICAL",25000),
+    new Tarjeta("Clics modernos","https://i.scdn.co/image/ab67616d0000b273b14842a87b833bc0a9339f60","Charly Garcia \nFormato: Vinilo",50000),
+    new Tarjeta("Submarine","https://i.scdn.co/image/ab67616d0000b2734d070fdf58fad8c54c5beb85","The Marias \nFormato: CD MUSICAL",30000),
+    new Tarjeta("Artud","https://i.discogs.com/69aBZjb_PYzDgsmiENK5FxZCygn-ilnK4uVfnzBmvaM/rs:fit/g:sm/q:90/h:600/w:595/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5NDU5/NDAtMTQ2NTE4ODc5/OS05MDYzLmpwZWc.jpeg","Pescado Rabioso \nFormato: Vinilo",60000),
+    new Tarjeta("166 (DELUXE) retirada","https://i.scdn.co/image/ab67616d0000b27399a66dbad79409a0ce37ae7b","Milo J \nFormato: CD MUSICAL",20000),
+    new Tarjeta(" Folklore","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ155bOxyDTMyP2sgHVQuYBQhmJ7hYeTnGotw&s","Taylor Swift \nFormato: Vinilo",40000),
+    new Tarjeta("Romance","https://i.scdn.co/image/ab67616d0000b273bda5c1e56bf06c3c7fc173f7","Luis Miguel \nFormato: CD MUSICAL",25000),
+    new Tarjeta("Miranda es imposible!","https://i.scdn.co/image/ab67616d0000b2737ffa007124cc61a27c9ade2f","Miranda! \nFormato: CD MUSICAL",20000),
+    new Tarjeta("Dynamo","https://i.scdn.co/image/ab67616d0000b273b755f1b1b4410d404fe21167","Soda Stereo \nFormato: CD MUSICAL",50000),
+    new Tarjeta("GRASA DE LAS CAPITALES","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVHpe91k-WYNWKGgQEeu1Hl94YaRgNb6VWQg&s","Seru Giran \nFormato: Vinilo",65000),
+    new Tarjeta("Harry Styles","https://i.scdn.co/image/ab67616d0000b2736c619c39c853f8b1d67b7859","Harry Styles \nFormato: Vinilo",35000),
+    new Tarjeta("American Idiot","https://http2.mlstatic.com/D_NQ_NP_695594-MLU79143085406_092024-O.webp","Green Day \nFormato: CD MUSICAL",25000),
+    new Tarjeta("Relax","https://acdn-us.mitiendanube.com/stores/004/088/117/products/156844-d0af5817e2101e623317269584198450-1024-1024.webp","Virus \nFormato: CD MUSCIAL",25000),
+    new Tarjeta("NEVERMIND","https://acdn-us.mitiendanube.com/stores/004/088/117/products/155461-88d3005f68c0ee9cce17269578689588-1024-1024.webp","Nirvana \nFormato: CD MUSICAL",22000),
+    new Tarjeta("AY AY AY","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCVubzTZD02Ikq4auz0qrlk-c_ari6wL7_Q&s","Los Piojos \nFormato: Vinilo",40000),
+    new Tarjeta("Vida","https://acdn-us.mitiendanube.com/stores/004/088/117/products/153674-e54c479473c209d88417284949840794-1024-1024.webp","Sui Generis \nFormato: Vinilo",60000),
+    new Tarjeta("Queen II","https://acdn-us.mitiendanube.com/stores/004/088/117/products/649227-548c7268b76572d44017274906407940-1024-1024.webp","Queen \nFormato: Vinilo",65000)
 ];
 function MostrarAlbumes() {
     albums.forEach(x => {
@@ -71,7 +89,7 @@ function MostrarAlbumes() {
         //boton de comprar
         let botonAdd = document.createElement("button")
         botonAdd.classList.add("btn")
-        botonAdd.classList.add("btn-primary")
+        botonAdd.classList.add("btn-dark")
         botonAdd.classList.add("mx-1")
         botonAdd.textContent = "Comprar"
 
@@ -110,19 +128,31 @@ class Persona {
         this.productos.forEach(x => total += x.precio)
         return total
     }
+    eliminarProducto(producto) {
+        let indice = this.productos.findIndex(x => x === producto)
+        this.productos.splice(indice, 1)
+    }
+     reset() {
+        this.productos = [];
+    }
 }
 const persona1 = new Persona("Carlos", "Millahueque", 48866750, "299-5242501", "charly_maniac83@gmail.com")
 
 let tbody = document.querySelector("#tbody")
-let subtotal=document.querySelector("#subtotal")
+let subtotal = document.querySelector("#subtotal")
 //carrito de comprasss
+function eliminarProductoLista(x) { //eliminar un producto dentro del arreglo persona
+    let indice = listaProducto.indexOf(x)
+    listaProducto.splice(indice, 1)
+
+}
 function Mostrar() {
-     if (subtotal.innerHTML !== 0) { //resetear 0 el total
-            subtotal.textContent = 0
-        }
-        if (tbody.innerHTML !== "") {
-            tbody.innerHTML = ""
-        }
+    if (subtotal.innerHTML !== 0) { //resetear 0 el total
+        subtotal.textContent = 0
+    }
+    if (tbody.innerHTML !== "") {
+        tbody.innerHTML = ""
+    }
     persona1.productos.forEach(x => {
         //carrito
         const tr = document.createElement("tr")
@@ -134,15 +164,35 @@ function Mostrar() {
         td3.textContent = x.precio
         const td4 = document.createElement("td")
 
+        let botonEliminar = document.createElement("button")
+
+      /*   botonEliminar.classList.add("bi")
+        botonEliminar.classList.add("bi-x-square") */
+        botonEliminar.classList.add("btn")
+        botonEliminar.classList.add("btn-danger")
+        botonEliminar.textContent="eliminar"
+
+        botonEliminar.addEventListener("click", function () {
+            persona1.eliminarProducto(x)
+            Mostrar()
+        })
+
         //total
         subtotal.textContent = persona1.subTotal()
         console.log(persona1.subTotal())
 
-        tr.append(td1, td2, td3)
+        td4.appendChild(botonEliminar)
+        tr.append(td1, td2, td3,td4)
         tbody.appendChild(tr)
 
 
     })
 }
+const botonReset = document.querySelector("#reset")
+botonReset.textContent="eliminar todo"
+botonReset.addEventListener("click", function () {
+    persona1.reset()
+    Mostrar()
+})
 
 
