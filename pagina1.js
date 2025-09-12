@@ -22,13 +22,13 @@ class Tarjeta {
         this.precio = precio;
     }
 }
-let contenedor = document.getElementById("contenedor")
-contenedor.classList.add("conteiner")
-contenedor.style.margin = "25px"
-contenedor.style.display = "flex"
+let contenedor = document.getElementById("contenedor");
+contenedor.classList.add("container");
+contenedor.style.margin = "25px";
+contenedor.style.display = "flex";
 
-let row = document.createElement("div")
-row.classList.add("row")
+let row = document.createElement("div");
+row.classList.add("row");
 let albums = [
     new Tarjeta("El Disco De Tu Corazón", "https://i.scdn.co/image/ab67616d0000b2735195219d777c551f280d95d5", "Miranda!\nFormato: CD MUSICAL", 25000),
     new Tarjeta("Flower Boy", "https://indiehoy.com/wp-content/uploads/2017/07/Tyler-the-Creator-Flower-Boy-994x1000.jpg", "Tyler The Creator \nFormato: CD MUSICAL", 35000),
