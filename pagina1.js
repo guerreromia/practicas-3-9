@@ -1,19 +1,15 @@
+// Fondo negro en toda la página
+document.body.style.backgroundColor = "black";
+document.body.style.color = "white";
+
+
+
 const conteiner = document.querySelectorAll('.Conteiner');
 conteiner.forEach(element => {
-    element.classList.add('bg-dark');
-    element.classList.add('text-white');
+    element.classList.add('bg-dark', 'text-white');
 });
 
-//Nav
-
-//Carrusel
-
-
-
-//Tarjetas
-//miranda
-//contenedor
-
+// ==== TARJETAS ====
 class Tarjeta {
     constructor(titulo, imagen, descripcion, precio) {
         this.titulo = titulo;
@@ -22,13 +18,14 @@ class Tarjeta {
         this.precio = precio;
     }
 }
-let contenedor = document.getElementById("contenedor");
-contenedor.classList.add("container");
-contenedor.style.margin = "25px";
-contenedor.style.display = "flex";
 
-let row = document.createElement("div");
-row.classList.add("row");
+// Contenedor de tarjetas
+let contenedor = document.getElementById("contenedor");
+contenedor.classList.add("d-flex", "flex-wrap", "justify-content-center", "gap-3");
+contenedor.style.margin = "25px";
+
+
+// Array de productos
 let albums = [
     new Tarjeta("El Disco De Tu Corazón", "https://i.scdn.co/image/ab67616d0000b2735195219d777c551f280d95d5", "Miranda!\nFormato: CD MUSICAL", 25000),
     new Tarjeta("Flower Boy", "https://indiehoy.com/wp-content/uploads/2017/07/Tyler-the-Creator-Flower-Boy-994x1000.jpg", "Tyler The Creator \nFormato: CD MUSICAL", 35000),
@@ -42,80 +39,72 @@ let albums = [
     new Tarjeta("Scarlet", "https://upload.wikimedia.org/wikipedia/en/0/0b/Doja_Cat_-_Scarlet.png", "Doja Cat\n \nFormato: CD MUSICAL", 25000),
     new Tarjeta("Oktubre", "https://akamai.sscdn.co/uploadfile/letras/albuns/6/3/e/4/2183691712605514.jpg", " Patricio Rey y sus Redonditos de Ricota \nFormato:CD MUSICAL", 30000),
     new Tarjeta("Baño María", "https://i.scdn.co/image/ab67616d0000b27340349e09eb8cc8cac72f7959", " CA7RIEL & Paco Amoroso \nFormato: CD MUSICAL", 30000),
-    new Tarjeta("Cabildo y Juramento","https://www.cmtv.com.ar/tapas-cd/0985337001602096602.webp","Conociendo Rusia \nFormato: Vinilo",35000),
-    new Tarjeta("Infame","https://i.scdn.co/image/ab67616d0000b273d4fa1c14516db6f30007a663","Babasónicos \nFormato: CD MUSICAL",25000),
-    new Tarjeta("Clics modernos","https://i.scdn.co/image/ab67616d0000b273b14842a87b833bc0a9339f60","Charly Garcia \nFormato: Vinilo",50000),
-    new Tarjeta("Submarine","https://i.scdn.co/image/ab67616d0000b2734d070fdf58fad8c54c5beb85","The Marias \nFormato: CD MUSICAL",30000),
-    new Tarjeta("Artud","https://i.discogs.com/69aBZjb_PYzDgsmiENK5FxZCygn-ilnK4uVfnzBmvaM/rs:fit/g:sm/q:90/h:600/w:595/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5NDU5/NDAtMTQ2NTE4ODc5/OS05MDYzLmpwZWc.jpeg","Pescado Rabioso \nFormato: Vinilo",60000),
-    new Tarjeta("166 (DELUXE) retirada","https://i.scdn.co/image/ab67616d0000b27399a66dbad79409a0ce37ae7b","Milo J \nFormato: CD MUSICAL",20000),
-    new Tarjeta(" Folklore","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ155bOxyDTMyP2sgHVQuYBQhmJ7hYeTnGotw&s","Taylor Swift \nFormato: Vinilo",40000),
-    new Tarjeta("Romance","https://i.scdn.co/image/ab67616d0000b273bda5c1e56bf06c3c7fc173f7","Luis Miguel \nFormato: CD MUSICAL",25000),
-    new Tarjeta("Miranda es imposible!","https://i.scdn.co/image/ab67616d0000b2737ffa007124cc61a27c9ade2f","Miranda! \nFormato: CD MUSICAL",20000),
-    new Tarjeta("Dynamo","https://i.scdn.co/image/ab67616d0000b273b755f1b1b4410d404fe21167","Soda Stereo \nFormato: CD MUSICAL",50000),
-    new Tarjeta("GRASA DE LAS CAPITALES","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVHpe91k-WYNWKGgQEeu1Hl94YaRgNb6VWQg&s","Seru Giran \nFormato: Vinilo",65000),
-    new Tarjeta("Harry Styles","https://i.scdn.co/image/ab67616d0000b2736c619c39c853f8b1d67b7859","Harry Styles \nFormato: Vinilo",35000),
-    new Tarjeta("American Idiot","https://http2.mlstatic.com/D_NQ_NP_695594-MLU79143085406_092024-O.webp","Green Day \nFormato: CD MUSICAL",25000),
-    new Tarjeta("Relax","https://acdn-us.mitiendanube.com/stores/004/088/117/products/156844-d0af5817e2101e623317269584198450-1024-1024.webp","Virus \nFormato: CD MUSCIAL",25000),
-    new Tarjeta("NEVERMIND","https://acdn-us.mitiendanube.com/stores/004/088/117/products/155461-88d3005f68c0ee9cce17269578689588-1024-1024.webp","Nirvana \nFormato: CD MUSICAL",22000),
-    new Tarjeta("AY AY AY","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCVubzTZD02Ikq4auz0qrlk-c_ari6wL7_Q&s","Los Piojos \nFormato: Vinilo",40000),
-    new Tarjeta("Vida","https://acdn-us.mitiendanube.com/stores/004/088/117/products/153674-e54c479473c209d88417284949840794-1024-1024.webp","Sui Generis \nFormato: Vinilo",60000),
-    new Tarjeta("Queen II","https://acdn-us.mitiendanube.com/stores/004/088/117/products/649227-548c7268b76572d44017274906407940-1024-1024.webp","Queen \nFormato: Vinilo",65000)
+    new Tarjeta("Cabildo y Juramento", "https://www.cmtv.com.ar/tapas-cd/0985337001602096602.webp", "Conociendo Rusia \nFormato: Vinilo", 35000),
+    new Tarjeta("Infame", "https://i.scdn.co/image/ab67616d0000b273d4fa1c14516db6f30007a663", "Babasónicos \nFormato: CD MUSICAL", 25000),
+    new Tarjeta("Clics modernos", "https://i.scdn.co/image/ab67616d0000b273b14842a87b833bc0a9339f60", "Charly Garcia \nFormato: Vinilo", 50000),
+    new Tarjeta("Submarine", "https://i.scdn.co/image/ab67616d0000b2734d070fdf58fad8c54c5beb85", "The Marias \nFormato: CD MUSICAL", 30000),
+    new Tarjeta("Artud", "https://i.discogs.com/69aBZjb_PYzDgsmiENK5FxZCygn-ilnK4uVfnzBmvaM/rs:fit/g:sm/q:90/h:600/w:595/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5NDU5/NDAtMTQ2NTE4ODc5/OS05MDYzLmpwZWc.jpeg", "Pescado Rabioso \nFormato: Vinilo", 60000),
+    new Tarjeta("166 (DELUXE) retirada", "https://i.scdn.co/image/ab67616d0000b27399a66dbad79409a0ce37ae7b", "Milo J \nFormato: CD MUSICAL", 20000),
+    new Tarjeta(" Folklore", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ155bOxyDTMyP2sgHVQuYBQhmJ7hYeTnGotw&s", "Taylor Swift \nFormato: Vinilo", 40000),
+    new Tarjeta("Romance", "https://i.scdn.co/image/ab67616d0000b273bda5c1e56bf06c3c7fc173f7", "Luis Miguel \nFormato: CD MUSICAL", 25000),
+    new Tarjeta("Miranda es imposible!", "https://i.scdn.co/image/ab67616d0000b2737ffa007124cc61a27c9ade2f", "Miranda! \nFormato: CD MUSICAL", 20000),
+    new Tarjeta("Dynamo", "https://i.scdn.co/image/ab67616d0000b273b755f1b1b4410d404fe21167", "Soda Stereo \nFormato: CD MUSICAL", 50000),
+    new Tarjeta("GRASA DE LAS CAPITALES", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVHpe91k-WYNWKGgQEeu1Hl94YaRgNb6VWQg&s", "Seru Giran \nFormato: Vinilo", 65000),
+    new Tarjeta("Harry Styles", "https://i.scdn.co/image/ab67616d0000b2736c619c39c853f8b1d67b7859", "Harry Styles \nFormato: Vinilo", 35000),
+    new Tarjeta("American Idiot", "https://http2.mlstatic.com/D_NQ_NP_695594-MLU79143085406_092024-O.webp", "Green Day \nFormato: CD MUSICAL", 25000),
+    new Tarjeta("Relax", "https://acdn-us.mitiendanube.com/stores/004/088/117/products/156844-d0af5817e2101e623317269584198450-1024-1024.webp", "Virus \nFormato: CD MUSCIAL", 25000),
+    new Tarjeta("NEVERMIND", "https://acdn-us.mitiendanube.com/stores/004/088/117/products/155461-88d3005f68c0ee9cce17269578689588-1024-1024.webp", "Nirvana \nFormato: CD MUSICAL", 22000),
+    new Tarjeta("AY AY AY", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnCVubzTZD02Ikq4auz0qrlk-c_ari6wL7_Q&s", "Los Piojos \nFormato: Vinilo", 40000),
+    new Tarjeta("Vida", "https://acdn-us.mitiendanube.com/stores/004/088/117/products/153674-e54c479473c209d88417284949840794-1024-1024.webp", "Sui Generis \nFormato: Vinilo", 60000),
+    new Tarjeta("Queen II", "https://acdn-us.mitiendanube.com/stores/004/088/117/products/649227-548c7268b76572d44017274906407940-1024-1024.webp", "Queen \nFormato: Vinilo", 65000)
 ];
+
+// Render de tarjetas
 function MostrarAlbumes() {
     albums.forEach(x => {
-        const col = document.createElement("div")
-        col.classList.add("col-md-6");
-        col.classList.add("col-lg-4")
+        const card = document.createElement("div");
+        card.classList.add("card", "shadow", "text-center");
+        card.style.width = "250px";
 
-        //tarjeta
-        let card = document.createElement("div")
-        card.classList.add("card")
-        card.style.width = "250px"
-        card.style.margin = "1rem"
+        // Imagen
+        const imagen = document.createElement("img");
+        imagen.classList.add("card-img-top");
+        imagen.src = x.imagen;
+        card.appendChild(imagen);
 
-        //imageb
-        const imagen = document.createElement("img")
-        imagen.classList.add("card-img-top")
-        imagen.src = x.imagen
-        card.appendChild(imagen)
+        // Cuerpo
+        const cardBody = document.createElement("div");
+        cardBody.classList.add("card-body");
 
-        //cuerpo
-        const cardBody = document.createElement("div")
-        cardBody.classList.add("card-body")
+        // Título
+        const titulo = document.createElement("h5");
+        titulo.classList.add("card-title");
+        titulo.textContent = x.titulo;
+        cardBody.appendChild(titulo);
 
-        //titulo
-        const titulo = document.createElement("h5")
-        titulo.classList.add("card-tittle")
-        titulo.textContent = `${x.titulo}`
-        cardBody.appendChild(titulo)
+        // Descripción
+        const parrafo = document.createElement("p");
+        parrafo.classList.add("card-text");
+        parrafo.textContent = `${x.descripcion}\nPrecio: $${x.precio}`;
 
-        //descripcion
-        const parrafo = document.createElement("p")
-        parrafo.classList.add("card-text")
-        parrafo.textContent = `${x.descripcion}\n precio: $${x.precio}`
-
-        //boton de comprar
-        let botonAdd = document.createElement("button")
-        botonAdd.classList.add("btn")
-        botonAdd.classList.add("btn-dark")
-        botonAdd.classList.add("mx-1")
-        botonAdd.textContent = "Comprar"
+        // Botón de comprar
+        let botonAdd = document.createElement("button");
+        botonAdd.classList.add("btn", "btn-dark");
+        botonAdd.textContent = "Comprar";
 
         botonAdd.addEventListener("click", function () {
-            persona1.agregarProducto(x)
-            Mostrar()
-        })
-        cardBody.append(parrafo, botonAdd)
-        card.appendChild(cardBody)
-        col.appendChild(card)
-        row.appendChild(col)
+            persona1.agregarProducto(x);
+            Mostrar();
+        });
 
-    })
-
+        cardBody.append(parrafo, botonAdd);
+        card.appendChild(cardBody);
+        contenedor.appendChild(card);
+    });
 }
-contenedor.appendChild(row)
-MostrarAlbumes()
+MostrarAlbumes();
 
+// ==== CLASE PERSONA ====
 class Persona {
     constructor(nombre, apellido, dni, telefono, email) {
         this.nombre = nombre;
@@ -126,109 +115,82 @@ class Persona {
         this.productos = [];
     }
     datosCompletos() {
-        return `Nombre:${this.nombre}, Apellido:${this.apellido}, DNI:${this.dni}, Telefono:${this.telefono}, Correo Electronico:${this.email}`
+        return `Nombre:${this.nombre}, Apellido:${this.apellido}, DNI:${this.dni}, Telefono:${this.telefono}, Correo Electronico:${this.email}`;
     }
     agregarProducto(producto) {
-        this.productos.push(producto)
+        this.productos.push(producto);
     }
     subTotal() {
-        let total = 0;
-        this.productos.forEach(x => total += x.precio)
-        return total
+        return this.productos.reduce((sum, p) => sum + p.precio, 0);
     }
     eliminarProducto(producto) {
-        let indice = this.productos.findIndex(x => x === producto)
-        this.productos.splice(indice, 1)
+        let indice = this.productos.findIndex(x => x === producto);
+        this.productos.splice(indice, 1);
     }
-     reset() {
+    reset() {
         this.productos = [];
     }
 }
-const persona1 = new Persona("Carlos", "Millahueque", 48866750, "299-5242501", "charly_maniac83@gmail.com")
+const persona1 = new Persona("Carlos", "Millahueque", 48866750, "299-5242501", "charly_maniac83@gmail.com");
 
-let tbody = document.querySelector("#tbody")
-let subtotal = document.querySelector("#subtotal")
-//carrito de comprasss
-function eliminarProductoLista(x) { //eliminar un producto dentro del arreglo persona
-    let indice = listaProducto.indexOf(x)
-    listaProducto.splice(indice, 1)
+let tbody = document.querySelector("#tbody");
+let subtotal = document.querySelector("#subtotal");
 
-}
+// ==== TABLA DE CARRITO ====
 function Mostrar() {
-    if (subtotal.innerHTML !== 0) { //resetear 0 el total
-        subtotal.textContent = 0
-    }
-    if (tbody.innerHTML !== "") {
-        tbody.innerHTML = ""
-    }
+    tbody.innerHTML = "";
+    subtotal.textContent = 0;
+
     persona1.productos.forEach(x => {
-        //carrito
-        const tr = document.createElement("tr")
-        const td1 = document.createElement("td")
-        td1.textContent = x.titulo
-        const td2 = document.createElement("td")
-        td2.textContent = x.descripcion
-        const td3 = document.createElement("td")
-        td3.textContent = x.precio
-        const td4 = document.createElement("td")
+        const tr = document.createElement("tr");
+        const td1 = document.createElement("td");
+        td1.textContent = x.titulo;
+        const td2 = document.createElement("td");
+        td2.textContent = x.descripcion;
+        const td3 = document.createElement("td");
+        td3.textContent = x.precio;
+        const td4 = document.createElement("td");
 
-        let botonEliminar = document.createElement("button")
-
-      /*   botonEliminar.classList.add("bi")
-        botonEliminar.classList.add("bi-x-square") */
-        botonEliminar.classList.add("btn")
-        botonEliminar.classList.add("btn-danger")
-        botonEliminar.textContent="eliminar"
+        let botonEliminar = document.createElement("button");
+        botonEliminar.classList.add("btn", "btn-danger");
+        botonEliminar.textContent = "Eliminar";
 
         botonEliminar.addEventListener("click", function () {
-            persona1.eliminarProducto(x)
-            Mostrar()
-        })
+            persona1.eliminarProducto(x);
+            Mostrar();
+        });
 
-        //total
-        subtotal.textContent = persona1.subTotal()
-        console.log(persona1.subTotal())
+        subtotal.textContent = persona1.subTotal();
 
-        td4.appendChild(botonEliminar)
-        tr.append(td1, td2, td3,td4)
-        tbody.appendChild(tr)
-
-
-    })
+        td4.appendChild(botonEliminar);
+        tr.append(td1, td2, td3, td4);
+        tbody.appendChild(tr);
+    });
 }
-const botonReset = document.querySelector("#reset")
-botonReset.textContent="eliminar todo"
+
+// Botón reset
+const botonReset = document.querySelector("#reset");
+botonReset.textContent = "Eliminar todo";
 botonReset.addEventListener("click", function () {
-    persona1.reset()
-    Mostrar()
-})
+    persona1.reset();
+    Mostrar();
+});
 
-
-
-
-
-//footer
+// ==== FOOTER ====
 const footer = document.getElementById('footer');
-footer.classList.add('bg-dark');
-footer.classList.add('text-white');
-footer.classList.add('text-center');
-
+footer.classList.add('bg-dark', 'text-white', 'text-center');
 
 const listaLinks = document.querySelectorAll(".nav-link");
-listaLinks.forEach(element => {
-    element.classList.add("text-white");
-    console.log(element);
-});
+listaLinks.forEach(element => element.classList.add("text-white"));
 
-//contador
+// ==== CONTADOR ====
 const cont = document.querySelectorAll(".container.my-5");
-cont.forEach(element => {
-    element.classList.add('bg-dark');
-});
 
-function animateCounter(counter) {
-    const target = +counter.getAttribute("data-target");
-    const duration = +counter.getAttribute("data-duration") || 2000;
+// ==== CONTADORES ====
+function animateCounter(cont) {
+    cont.classList.add("text-white"); 
+    const target = +cont.getAttribute("data-target"); // <-- FIX
+    const duration = +cont.getAttribute("data-duration") || 2000;
     const stepTime = Math.abs(Math.floor(duration / target));
 
     let current = 0;
@@ -237,21 +199,16 @@ function animateCounter(counter) {
     const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
-            counter.textContent = target;
+            cont.textContent = target;
             clearInterval(timer);
         } else {
-            counter.textContent = Math.floor(current);
+            cont.textContent = Math.floor(current);
         }
     }, stepTime);
 }
 
-// Detecta cuando la sección entra en pantalla
 function initCounters() {
     const counters = document.querySelectorAll(".counter");
-    counters.forEach(counter => {
-        animateCounter(counter);
-    });
+    counters.forEach(c => animateCounter(c));
 }
-
-// Ejecutar cuando se cargue la página
 window.addEventListener("load", initCounters);
