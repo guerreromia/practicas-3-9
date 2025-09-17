@@ -5,73 +5,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simones</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
 <body>
-    <!--Nav-->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a  class="nav-brand" href="a">
-                <img src="ninalogo1-removebg-preview.png" width="80px" sizes="80px">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item mt-2">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item mt-2">
-                        <a class="nav-link" href="#">Comunidad</a>
-                    </li>
-                    <li>
-                        <nav class="navbar bg-body-tertiary">
-                            <div class="container-fluid">
-                                <form class="d-flex" role="search">
-                                    
-                                    <a class="nav-link" href="#">Categorias</a>
-
-                                    <input class="form-control me-2" type="search" placeholder="Search"
-                                        aria-label="Search" />
-                                        <div class="Filtro"></div>
-                                    <button onclick="Filtrar()" class="btn btn-dark">buscar</button>
-                                </form>
-                            </div>
-                        </nav>
-                    </li>
-                    <li class="nav-item dropdown mt-2" >
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Ayuda
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="crear.html">Crear Cuenta</a></li>
-                            <li><a class="dropdown-item" href="#">Atención al cliente</a></li>
-                            <li><a class="dropdown-item" href="#">Ayuda y Soporte</a></li>
-                        </ul>
-                    </li>
-                </ul>
+    <!-- Carrusel -->
+    <div class="container">
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
             </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://www.elleman.vn/app/uploads/2025/08/19/251183/taylor-swift-the-life-of-a-showgirl_elleman.jpg"
+                        class="d-block w-100" alt="Taylor Swift">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>The Life of a Showgirl</h5>
+                        <p>Nuevo album de Taylor Swift PROXIMAMENTE.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://cdn.themedizine.com/2017/07/tyler-the-creator-2.jpg" class="d-block w-100"
+                        alt="Tyler">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Tyler The Creator</h5>
+                        <p>¡Ingreso nuevo! "Flower Boy" ya está disponible.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.hollywoodreporter.com/wp-content/uploads/2025/08/Stray-Kids-POI-temp-publicity-H-2025.png?w=2000&h=1126&crop=1"
+                        class="d-block w-100" alt="Stray Kids">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Stray Kids</h5>
+                        <p>El nuevo álbum de Stray Kids "KARMA" ya está disponible.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
         </div>
 
-    </nav>
+        <!-- Sección de contadores -->
+        <section class="container my-5">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <h2 class="counter" data-target="4000" data-duration="4000">0</h2>
+                    <p>Usuarios registrados</p>
+                </div>
+                <div class="col-md-4">
+                    <h2 class="counter" data-target="30" data-duration="2000">0</h2>
+                    <p>Productos disponibles</p>
+                </div>
+                <div class="col-md-4">
+                    <h2 class="counter" data-target="2000" data-duration="2000">0</h2>
+                    <p>Discos y CD comprados al mes</p>
+                </div>
+            </div>
+        </section>
+    </div>
 
-    <!--Carrusel-->
+    <!-- Tarjetas -->
+    <div class="container my-4">
+        <div id="contenedor" class="d-flex flex-wrap justify-content-center"></div>
+    </div>
 
-    <!--Tarjetas-->
+    <!-- Tabla -->
+    <div class="container my-4">
+        <table class="table table-bordered table-light">
+            <thead class="bg-primary text-white">
+                <tr>
+                    <th>Título</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
 
+        <p class="h2 text-black">
+            SUBTOTAL: $<strong class="text-danger" id="subtotal">0</strong>
+            <button id="reset" class="btn btn-danger ms-2">Eliminar todo</button>
+        </p>
+    </div>
 
+    <!-- Footer -->
+     <footer class="py-5" id="footer">
+        <div class="row">
+            <div class="col-6 col-md-2 mb-3">
+                <h5></h5>
+                <ul class="nav flex-column" id="inicio">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Inicio</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0"></a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md-2 mb-3">
+                <h5>Ayuda</h5>
+                <ul class="nav flex-column" id="ayuda">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Métodos de envío</a>
+                    </li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Medios de pago</a>
+                    </li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Promociones
+                            Bancarias</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Cambios y
+                            devoluciones</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Preguntas
+                            frecuentes</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md-2 mb-3">
+                <h5>Atencion al cliente</h5>
+                <ul class="nav flex-column" id="atencion">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">+542995043989</a>
+                    </li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">08003012042</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Soporte.simones@gmail.com</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Roca e Itaia - Rio
+                            Negro - Cipolletti</a></li>
+                </ul>
+            </div>
+            <div class="col-md-5 offset-md-1 mb-3">
+                <form>
+                    <h5>Suscribite!</h5>
+                    <p>Para enterarte de nuevos productos.</p>
+                    <div class="d-flex flex-column flex-sm-row w-100 gap-2"> <label for="newsletter1"
+                            class="visually-hidden">Email address</label> <input id="newsletter1" type="email"
+                            class="form-control" placeholder="Email address"> <button class="btn btn-primary"
+                            type="button">Subscribe</button> </div>
+                </form>
+            </div>
+        </div>
+        <div class="d-flex flex-column flex-sm-row justify-content-center py-4 my-4 border-top">
+            <p>© 2025 Company, Inc. All rights reserved.</p>
+            <ul class="list-unstyled d-flex">
+                <li class="ms-3"><a class="link-body-emphasis" href="#" aria-label="Instagram"><svg class="bi"
+                            width="24" height="24">
+                            <use xlink:href="#instagram"></use>
+                        </svg></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="#" aria-label="Facebook"><svg class="bi" width="24"
+                            height="24" aria-hidden="true">
+                            <use xlink:href="#facebook"></use>
+                        </svg></a></li>
+            </ul>
+        </div>
+    </footer>
 
-
-    <script src="./pagina1.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="pagina1.js"></script>
 </body>
 
 </html>
