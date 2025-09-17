@@ -59,12 +59,50 @@ let albums = [
     new Tarjeta("Queen II", "https://acdn-us.mitiendanube.com/stores/004/088/117/products/649227-548c7268b76572d44017274906407940-1024-1024.webp", "Queen \nFormato: Vinilo", 65000)
 ];
 
+// ==== CONTENEDOR SWIPER ====
+const swiperWrapper = document.createElement("div");
+swiperWrapper.id = "swiper-wrapper";
+swiperWrapper.style.display = "flex";
+swiperWrapper.style.overflowX = "hidden";
+swiperWrapper.style.scrollBehavior = "smooth";
+swiperWrapper.style.gap = "20px";
+swiperWrapper.style.width = "100%";
+swiperWrapper.style.position = "relative";
+
+// Insertar wrapper dentro del contenedor principal
+contenedor.appendChild(swiperWrapper);
+
+// ==== BOTONES DEL SWIPER ====
+const btnPrev = document.createElement("button");
+btnPrev.textContent = "<";
+btnPrev.classList.add("btn", "btn-dark");
+btnPrev.style.position = "absolute";
+btnPrev.style.left = "10px";
+btnPrev.style.top = "50%";
+btnPrev.style.transform = "translateY(-50%)";
+btnPrev.style.zIndex = "10";
+
+const btnNext = document.createElement("button");
+btnNext.textContent = ">";
+btnNext.classList.add("btn", "btn-dark");
+btnNext.style.position = "absolute";
+btnNext.style.right = "10px";
+btnNext.style.top = "50%";
+btnNext.style.transform = "translateY(-50%)";
+btnNext.style.zIndex = "10";
+
+// Agregamos los botones al contenedor principal
+contenedor.style.position = "relative";
+contenedor.appendChild(btnPrev);
+contenedor.appendChild(btnNext);
+
 // Render de tarjetas
-function MostrarAlbumes() {
+function MostrarAlbumesSwiper() {
     albums.forEach(x => {
         const card = document.createElement("div");
         card.classList.add("card", "shadow", "text-center");
         card.style.width = "250px";
+        card.style.flex = "0 0 auto"; // Importante: evita que se achiquen
 
         // Imagen
         const imagen = document.createElement("img");
@@ -76,22 +114,18 @@ function MostrarAlbumes() {
         const cardBody = document.createElement("div");
         cardBody.classList.add("card-body");
 
-        // Título
         const titulo = document.createElement("h5");
         titulo.classList.add("card-title");
         titulo.textContent = x.titulo;
         cardBody.appendChild(titulo);
 
-        // Descripción
         const parrafo = document.createElement("p");
         parrafo.classList.add("card-text");
         parrafo.textContent = `${x.descripcion}\nPrecio: $${x.precio}`;
 
-        // Botón de comprar
-        let botonAdd = document.createElement("button");
+        const botonAdd = document.createElement("button");
         botonAdd.classList.add("btn", "btn-dark");
         botonAdd.textContent = "Comprar";
-
         botonAdd.addEventListener("click", function () {
             persona1.agregarProducto(x);
             Mostrar();
@@ -99,10 +133,23 @@ function MostrarAlbumes() {
 
         cardBody.append(parrafo, botonAdd);
         card.appendChild(cardBody);
-        contenedor.appendChild(card);
+
+        swiperWrapper.appendChild(card);
     });
 }
-MostrarAlbumes();
+MostrarAlbumesSwiper();
+
+// ==== LÓGICA DEL SWIPER ====
+const cardWidth = 270; // ancho tarjeta + margen aprox.
+let scrollAmount = 0;
+
+btnNext.addEventListener("click", () => {
+    swiperWrapper.scrollBy({ left: cardWidth, behavior: "smooth" });
+});
+
+btnPrev.addEventListener("click", () => {
+    swiperWrapper.scrollBy({ left: -cardWidth, behavior: "smooth" });
+});
 
 // ==== CLASE PERSONA ====
 class Persona {
@@ -175,6 +222,42 @@ botonReset.addEventListener("click", function () {
     persona1.reset();
     Mostrar();
 });
+// ==== BOTÓN IMPRIMIR TICKET ====
+const botonTicket = document.createElement("button");
+botonTicket.textContent = "Imprimir Ticket";
+botonTicket.classList.add("btn", "btn-success");
+botonTicket.style.marginLeft = "10px";
+
+// Insertamos el botón después del botón reset
+botonReset.insertAdjacentElement('afterend', botonTicket);
+
+// Función para generar el ticket
+function generarTicket() {
+    if (persona1.productos.length === 0) {
+        alert("No hay productos en el carrito.");
+        return;
+    }
+
+    let ticket = "===== TICKET DE COMPRA =====\n\n";
+    ticket += `Cliente: ${persona1.datosCompletos()}\n\n`;
+    ticket += "Productos:\n";
+
+    persona1.productos.forEach((p, index) => {
+        ticket += `${index + 1}. ${p.titulo} - ${p.descripcion} - $${p.precio}\n`;
+    });
+
+    ticket += `\nSubtotal: $${persona1.subTotal()}\n`;
+    ticket += "===========================\n";
+
+    // Abrir ventana para imprimir
+    const ventanaTicket = window.open("", "Ticket", "width=400,height=600");
+    ventanaTicket.document.write(`<pre>${ticket}</pre>`);
+    ventanaTicket.document.close();
+    ventanaTicket.print();
+}
+
+// Evento click
+botonTicket.addEventListener("click", generarTicket);
 
 // ==== FOOTER ====
 const footer = document.getElementById('footer');
@@ -188,7 +271,7 @@ const cont = document.querySelectorAll(".container.my-5");
 
 // ==== CONTADORES ====
 function animateCounter(cont) {
-    cont.classList.add("text-white"); 
+    cont.classList.add("text-white");
     const target = +cont.getAttribute("data-target"); // <-- FIX
     const duration = +cont.getAttribute("data-duration") || 2000;
     const stepTime = Math.abs(Math.floor(duration / target));
