@@ -2,11 +2,21 @@
 document.body.style.backgroundColor = "black";
 document.body.style.color = "white";
 
+//nav 
+const nav=document.querySelectorAll("nav-link")
+nav.classList.add("dark-text")
+
+function Filtrar(precio,artista) {
+    const filtrar = document.querySelector("#BotonFiltrar")
+    let precio_artista =  document.querySelector("#valorFiltro")
+    albums.forEach(filtro => { });
+    filtrar.filter()
+}
 
 
 const conteiner = document.querySelectorAll('.Conteiner');
 conteiner.forEach(element => {
-    element.classList.add('bg-dark', 'text-white');
+    element.classList.add('bg-dark', 'text-black');
 });
 
 // ==== TARJETAS ====
